@@ -1,0 +1,81 @@
+body {
+    display: flex;
+}
+
+.leftside{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 800px;
+    justify-content: center;
+    gap: 70px;
+}
+
+.rightside{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    height: 800px;
+}
+
+.score{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    align-items: flex-end;
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-right: 50px;
+}
+
+.highscoretable{
+    height: 300px;
+    background-color: silver;
+    margin: 50px;
+}
+
+.bottomfield{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+input{
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: silver;
+}
+
+.buttonfield{
+    display: flex;
+    height: 50px;
+    gap: 30px;
+    justify-content: center;
+}
+
+button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: silver;
+    flex: 1;
+}
+
+.mainscreen{
+    flex: 3;
+    background-color: silver;
+}
+
+.gamemodes{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#easy,
+#medium,
+#hard{
+    height: 70px;
+    width: 150px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
