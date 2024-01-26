@@ -1,4 +1,4 @@
-export class Function {
+class Function {
     //# - syntax for private
     #function_type
     #actual_function
@@ -72,7 +72,7 @@ export class Function {
     #generateReciprocal(){
         //generates Reciprocal function (hard difficulty)
         let values = [this.#randomCoefficientGenerator(-3,4),this.#randomNumberWithSignsGenerator(-20,21),this.#randomNumberWithSignsGenerator(-20,21)];
-        let result = values[0]+"/(x"+values[1]+") "+values[2];
+        let result = "("+values[0]+"/(x"+values[1]+"))"+values[2];
         this.functionType = 'reciprocal';
         return result;
     }
@@ -97,11 +97,13 @@ export class Function {
             case 'easy':
                 return this.#generateLinear();
             case 'medium':
-                const mediumDifficulty = [this.#generateQuadratic(), this.#generateExp()];
-                return mediumDifficulty[this.#randomCoefficientGenerator(0,mediumDifficulty.length)];
+                const mediumDifficulty = [this.#generateQuadratic, this.#generateExp];
+                const method = mediumDifficulty[this.#randomCoefficientGenerator(0,mediumDifficulty.length)];
+                return method.call(this);
             default:
-                const hardDifficulty = [this.#generateCubic(),this.#generateReciprocal(),this.#generateSine(),this.#generateCosine()];
-                return hardDifficulty[this.#randomCoefficientGenerator(0,hardDifficulty.length)];
+                const hardDifficulty = [this.#generateCubic,this.#generateReciprocal,this.#generateSine,this.#generateCosine];
+                const method1 = hardDifficulty[this.#randomCoefficientGenerator(0,hardDifficulty.length)];
+                return method1.call(this);
         }
     }
 
@@ -111,3 +113,8 @@ export class Function {
         this.actualFunction = this.generateRandomFunction('easy');
     }
 }
+
+let testFunction = new Function();
+
+console.log(testFunction.functionType);
+console.log(testFunction.actualFunction);
