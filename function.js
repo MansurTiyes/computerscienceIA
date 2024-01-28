@@ -1,3 +1,4 @@
+
 class Function {
     //# - syntax for private
     #function_type
@@ -112,9 +113,16 @@ class Function {
         //creates new instance of function that calls generateRandomFunction(easy) when created
         this.actualFunction = this.generateRandomFunction('easy');
     }
+
+    static isValid(expression){
+        const regex = /^[\d\s\+\-\*\/\%\(\)\.\^\,]*([a-zA-Z]+\([\d\s\+\-\*\/\%\(\)\.\^\,]*\))*[a-zA-Z]*[\d\s\+\-\*\/\%\(\)\.\^\,]*$/;
+
+        return regex.test(expression);
+    }
 }
 
 let testFunction = new Function();
 
 console.log(testFunction.functionType);
 console.log(testFunction.actualFunction);
+console.log(Function.isValid(testFunction.actualFunction));
