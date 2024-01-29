@@ -121,6 +121,8 @@ class Function {
     }
 }
 
+export default Function;
+
 let testFunction = new Function();
 
 console.log(testFunction.functionType);

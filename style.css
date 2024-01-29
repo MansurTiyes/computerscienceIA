@@ -79,3 +79,8 @@ button {
     width: 150px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.glow-red {
+    border: 2px solid red;
+    transition: border 0.3s ease-out;
+}
