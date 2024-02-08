@@ -22,7 +22,30 @@ class GameMath {
         // returns 2 decimal places after percentage
         return avgPercentageDifference.toFixed(2);
     }
+
+    //function that calculates score based on obtained percentage of how close
+    static scoreCalculate(difficulty,avgPercentageDifference){
+        let newScore = 0;
+        if (avgPercentageDifference == 0){
+            newScore = 1000;
+        } else if (avgPercentageDifference>0 && avgPercentageDifference <= 20){
+            newScore = 500;
+        } else if (avgPercentageDifference>20 && avgPercentageDifference <=50){
+            newScore = 350;
+        } else if (avgPercentageDifference>50 && avgPercentageDifference <=100){
+            newScore = 100;
+        } 
+        switch (difficulty){
+            case 'hard':
+                return newScore*3;
+            case 'medium':
+                return newScore*2;
+            default:
+                return newScore;
+        }
+    }
 }
 
 const percentageDifference = GameMath.calculatePercentageDifference('1/(1+x)','1/(2+3x)');
 console.log(percentageDifference);
+console.log(GameMath.scoreCalculate('hard',percentageDifference));
