@@ -79,6 +79,7 @@ class Function {
     }
 
     #generateSine(){
+        //generates Sine function (hard difficulty)
         let values= [this.#randomCoefficientGenerator(-3,4),this.#randomCoefficientGenerator(1,3),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"sin("+values[1]+"x"+values[2]+")"+values[3];
         this.functionType = 'sine';
@@ -86,6 +87,7 @@ class Function {
     }
 
     #generateCosine(){
+        //generates Cosine function (hard difficulty)
         let values= [this.#randomCoefficientGenerator(-3,4),this.#randomCoefficientGenerator(1,3),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"cos("+values[1]+"x"+values[2]+")"+values[3];
         this.functionType = 'cosine';
