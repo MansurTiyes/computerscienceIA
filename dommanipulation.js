@@ -11,7 +11,7 @@ class DOMManipulation{
 
     //function that makes the input field grow temporarily red
     static glowRed(){
-        const inputField = document.querySelector('.userinputfield');
+        const inputField = document.querySelector('#userinputfield');
         inputField.classList.add('glow-red');
 
         setTimeout(function() {
@@ -53,7 +53,7 @@ class DOMManipulation{
             default:
                 text = "Vertical shifts are depicted by changes in the constant term, influencing the amplitude and midline of the cosine wave. Horizontal shifts involve alterations to the input variable, determining the phase shift or horizontal displacement of the cosine function. The coefficient of the variable affects the frequency or period, influencing how rapidly the cosine wave oscillates. Additionally, changes in the amplitude can be observed in the coefficient multiplying the cosine function. By understanding these transformations, you can deduce the specific cosine function corresponding to the graph in our game. Keep in mind that the general form of a cosine function is y = a*cos(bx + c) + d, where 'a' represents the amplitude, 'b' affects the frequency, 'c' denotes the phase shift, and 'd' is the vertical shift.";
         }
-        let element = document.querySelector('.explanation');
+        let element = document.querySelector('.highscoretable');
         element.textContent = text;
     }
 }

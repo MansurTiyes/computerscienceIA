@@ -125,8 +125,3 @@ class Function {
 
 export default Function;
 
-let testFunction = new Function();
-
-console.log(testFunction.functionType);
-console.log(testFunction.actualFunction);
-console.log(Function.isValid(testFunction.actualFunction));

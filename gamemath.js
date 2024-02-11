@@ -23,7 +23,7 @@ class GameMath {
         return avgPercentageDifference.toFixed(2);
     }
 
-    //function that calculates score based on obtained percentage of how close
+    // function that calculates score based on obtained percentage of how close
     static scoreCalculate(difficulty,avgPercentageDifference){
         let newScore = 0;
         if (avgPercentageDifference == 0){
@@ -46,6 +46,4 @@ class GameMath {
     }
 }
 
-const percentageDifference = GameMath.calculatePercentageDifference('1/(1+x)','1/(2+3x)');
-console.log(percentageDifference);
-console.log(GameMath.scoreCalculate('hard',percentageDifference));
+export default GameMath;

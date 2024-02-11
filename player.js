@@ -1,4 +1,4 @@
-export class Player{
+class Player{
     #current_score;
     #player_guess;
 
@@ -23,3 +23,5 @@ export class Player{
         this.#player_guess = newGuess;
     }
 }
+
+export default Player;

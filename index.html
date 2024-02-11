@@ -6,17 +6,24 @@
     <title>Computer science IA</title>
     <link rel="stylesheet" href="style.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.2.0/math.js'></script>
-    <script src="gamemath.js" defer></script>
+    <script type="module" src="player.js"></script>
+    <script type="module" src="dommanipulation.js"></script>
+    <script type="module" src="function.js"></script>
+    <script type="module" src="gamemath.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+    <script type="module" src="game.js" defer></script>
 </head>
 <body>
     <div class="leftside">
         <div class="score">
             <div id="currentscore">Current Score: </div>
             <span id="scoreupdate">0</span>
+            <div id="calculationdisplay">It was <span id="percent">x</span>% different from the function: <span id="actualfunctiondisplay">y = mx+b</span></div>
         </div>
         <div class="highscoretable"></div>
         <div class="bottomfield">
-            <input type="text" class="userinputfield" placeholder="Enter your Guess here...">
+            <input type="text" id="userinputfield" placeholder="Enter your Guess here...">
             <div class="buttonfield">
                 <button id="tryit">TRY IT!</button>
                 <button id="submit">SUBMIT!</button>
@@ -24,7 +31,7 @@
          </div>
     </div>
     <div class="rightside">
-        <div class="mainscreen"></div>
+        <div id="mainscreen"></div>
         <div class="gamemodes">
             <button id="easy">Easy</button>
             <button id="medium">Medium</button>
