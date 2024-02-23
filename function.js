@@ -1,6 +1,4 @@
-
 class Function {
-    //# - syntax for private
     #function_type
     #actual_function
 
@@ -117,9 +115,11 @@ class Function {
     }
 
     static isValid(expression){
+        // This code validates user input to conventions of ECMAscript
         const regex =  /^(?=.*\bx\b)(?=.*\b(?:cos|sin|exp)\b)?.*$/;
 
         return regex.test(expression);
+        // returns true if valid and false if wrong
     }
 }
 
