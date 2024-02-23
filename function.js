@@ -95,7 +95,7 @@ class Function {
     }
 
     generateRandomFunction(difficulty){
-        //function that generates random function depending on the input
+        // function that generates random function depending on the input
         switch (difficulty){
             case 'easy':
                 return this.#generateLinear();
@@ -117,7 +117,7 @@ class Function {
     }
 
     static isValid(expression){
-        const regex = /^[\d\s\+\-\*\/\%\(\)\.\^\,]*([a-zA-Z]+\([\d\s\+\-\*\/\%\(\)\.\^\,]*\))*[a-zA-Z]*[\d\s\+\-\*\/\%\(\)\.\^\,]*$/;
+        const regex =  /^(?=.*\bx\b)(?=.*\b(?:cos|sin|exp)\b)?.*$/;
 
         return regex.test(expression);
     }

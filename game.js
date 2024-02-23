@@ -2,8 +2,6 @@ import Player from './player.js';
 import DOMManipulation from './dommanipulation.js';
 import Function from './function.js';
 import GameMath from './gamemath.js';
-//import functionPlot from 'function-plot';
-
 
 
 let options = {
@@ -27,7 +25,6 @@ class Game{
         DOMManipulation.addClickEvent('easy',this.gameModeButtonClicked.bind(this,'easy'));
         DOMManipulation.addClickEvent('medium',this.gameModeButtonClicked.bind(this,'medium'));
         DOMManipulation.addClickEvent('hard',this.gameModeButtonClicked.bind(this, 'hard'));
-        //WORK ON TRY IT (DOESNT PROPERLY WORK YET)
         DOMManipulation.addClickEvent('tryit',this.tryItButtonClicked.bind(this));
         DOMManipulation.addClickEvent('submit',this.submitButtonClicked.bind(this));
     }
@@ -84,8 +81,6 @@ class Game{
 }
 
 let game = new Game();
-console.log(Function.isValid('3x^2+2x+9'));
-
 
 export default Game;
 
