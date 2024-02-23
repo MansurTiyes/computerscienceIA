@@ -1,6 +1,10 @@
 class Function {
-    function_type
-    actual_function
+    constructor(){
+        //Because js is not static, constructor has to be written at the end after all functions were established
+        //creates new instance of function that calls generateRandomFunction(easy) when created
+        this.actualFunction = this.generateRandomFunction('easy');
+        this.functionType = null;
+    }
 
     get functionType(){
         return this.function_type;

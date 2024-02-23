@@ -1,7 +1,5 @@
 class Player{
     // Private fields - a field that contains player's current score (int) and guess (string)
-    current_score = 0;
-    player_guess = "";
 
     // Constructor initializing starting current score as 0 and player's guess as empty
     constructor(){
