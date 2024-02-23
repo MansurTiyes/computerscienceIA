@@ -1,22 +1,22 @@
 class Function {
-    #function_type
-    #actual_function
+    function_type
+    actual_function
 
     get functionType(){
-        return this.#function_type;
+        return this.function_type;
     }
     set functionType(newFunctionType){
-        this.#function_type = newFunctionType;
+        this.function_type = newFunctionType;
     }
 
     get actualFunction(){
-        return this.#actual_function;
+        return this.actual_function;
     }
     set actualFunction(newActualFunction){
-        this.#actual_function = newActualFunction;
+        this.actual_function = newActualFunction;
     }
 
-    #randomCoefficientGenerator(min,max){
+    randomCoefficientGenerator(min,max){
         //This is random number generator for coefficients that don't need + sign
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -24,10 +24,10 @@ class Function {
         // The maximum is exclusive and the minimum is inclusive
     }
 
-    #randomNumberWithSignsGenerator(min,max){
+    randomNumberWithSignsGenerator(min,max){
         //This is random number generator for numbers that include their signs in order 
         //to properly meet the operation writing conventions and simplify the subsequent operations for graphing functions
-        const value = this.#randomCoefficientGenerator(min,max);
+        const value = this.randomCoefficientGenerator(min,max);
         if (value>0){
             return "+"+value;
         } 
@@ -36,57 +36,57 @@ class Function {
         }
     }
 
-    #generateLinear(){
+    generateLinear(){
         //generates linear function (easy difficulty)
-        let values = [this.#randomCoefficientGenerator(-10,11),this.#randomNumberWithSignsGenerator(-30,31)];
+        let values = [this.randomCoefficientGenerator(-10,11),this.randomNumberWithSignsGenerator(-30,31)];
         let result = values[0]+"x"+values[1];
         this.functionType = 'linear';
         return result;
     }
 
-    #generateQuadratic(){
+    generateQuadratic(){
         //generates quadratic function (medium diffiiculty)
-        let values = [this.#randomCoefficientGenerator(-10,11),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,21)];
+        let values = [this.randomCoefficientGenerator(-10,11),this.randomNumberWithSignsGenerator(-10,11),this.randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"x^2"+values[1]+"x"+values[2];
         this.functionType = 'quadratic';
         return result;
     }
 
-    #generateExp(){
+    generateExp(){
         //generates exponential function (medium difficulty)
-        let values = [this.#randomCoefficientGenerator(-3,4),this.#randomNumberWithSignsGenerator(-20,21),this.#randomNumberWithSignsGenerator(-20,21)];
+        let values = [this.randomCoefficientGenerator(-3,4),this.randomNumberWithSignsGenerator(-20,21),this.randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"exp(x"+values[1]+")"+values[2];
         this.functionType = 'exponential';
         return result;
     }
 
-    #generateCubic(){
+    generateCubic(){
         //generates cubic function (hard difficulty)
-        let values = [this.#randomCoefficientGenerator(-1,5),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,20)];
+        let values = [this.randomCoefficientGenerator(-1,5),this.randomNumberWithSignsGenerator(-10,11),this.randomNumberWithSignsGenerator(-10,11),this.randomNumberWithSignsGenerator(-20,20)];
         let result = values[0]+"x^3"+values[1]+"x^2"+values[2]+"x"+values[3];
         this.functionType = 'cubic';
         return result;
     }
 
-    #generateReciprocal(){
+    generateReciprocal(){
         //generates Reciprocal function (hard difficulty)
-        let values = [this.#randomCoefficientGenerator(-3,4),this.#randomNumberWithSignsGenerator(-20,21),this.#randomNumberWithSignsGenerator(-20,21)];
+        let values = [this.randomCoefficientGenerator(-3,4),this.randomNumberWithSignsGenerator(-20,21),this.randomNumberWithSignsGenerator(-20,21)];
         let result = "("+values[0]+"/(x"+values[1]+"))"+values[2];
         this.functionType = 'reciprocal';
         return result;
     }
 
-    #generateSine(){
+    generateSine(){
         //generates Sine function (hard difficulty)
-        let values= [this.#randomCoefficientGenerator(-3,4),this.#randomCoefficientGenerator(1,3),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,21)];
+        let values= [this.randomCoefficientGenerator(-3,4),this.randomCoefficientGenerator(1,3),this.randomNumberWithSignsGenerator(-10,11),this.randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"sin("+values[1]+"x"+values[2]+")"+values[3];
         this.functionType = 'sine';
         return result;
     }
 
-    #generateCosine(){
+    generateCosine(){
         //generates Cosine function (hard difficulty)
-        let values= [this.#randomCoefficientGenerator(-3,4),this.#randomCoefficientGenerator(1,3),this.#randomNumberWithSignsGenerator(-10,11),this.#randomNumberWithSignsGenerator(-20,21)];
+        let values= [this.randomCoefficientGenerator(-3,4),this.randomCoefficientGenerator(1,3),this.randomNumberWithSignsGenerator(-10,11),this.randomNumberWithSignsGenerator(-20,21)];
         let result = values[0]+"cos("+values[1]+"x"+values[2]+")"+values[3];
         this.functionType = 'cosine';
         return result;
@@ -96,14 +96,14 @@ class Function {
         // function that generates random function depending on the input
         switch (difficulty){
             case 'easy':
-                return this.#generateLinear();
+                return this.generateLinear();
             case 'medium':
-                const mediumDifficulty = [this.#generateQuadratic, this.#generateExp];
-                const method = mediumDifficulty[this.#randomCoefficientGenerator(0,mediumDifficulty.length)];
+                const mediumDifficulty = [this.generateQuadratic, this.generateExp];
+                const method = mediumDifficulty[this.randomCoefficientGenerator(0,mediumDifficulty.length)];
                 return method.call(this);
             default:
-                const hardDifficulty = [this.#generateCubic,this.#generateReciprocal,this.#generateSine,this.#generateCosine];
-                const method1 = hardDifficulty[this.#randomCoefficientGenerator(0,hardDifficulty.length)];
+                const hardDifficulty = [this.generateCubic,this.generateReciprocal,this.generateSine,this.generateCosine];
+                const method1 = hardDifficulty[this.randomCoefficientGenerator(0,hardDifficulty.length)];
                 return method1.call(this);
         }
     }
