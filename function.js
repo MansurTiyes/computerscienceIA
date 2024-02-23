@@ -1,7 +1,5 @@
 class Function {
     constructor(){
-        //Because js is not static, constructor has to be written at the end after all functions were established
-        //creates new instance of function that calls generateRandomFunction(easy) when created
         this.actualFunction = this.generateRandomFunction('easy');
         this.functionType = null;
     }
@@ -110,12 +108,6 @@ class Function {
                 const method1 = hardDifficulty[this.randomCoefficientGenerator(0,hardDifficulty.length)];
                 return method1.call(this);
         }
-    }
-
-    constructor(){
-        //Because js is not static, constructor has to be written at the end after all functions were established
-        //creates new instance of function that calls generateRandomFunction(easy) when created
-        this.actualFunction = this.generateRandomFunction('easy');
     }
 
     static isValid(expression){
