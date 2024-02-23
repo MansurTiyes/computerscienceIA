@@ -1,6 +1,6 @@
 class Function {
-    function_type;
-    actual_function;
+    function_type = "";
+    actual_function = "";
 
     get functionType(){
         return this.function_type;
