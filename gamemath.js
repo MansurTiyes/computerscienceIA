@@ -1,3 +1,5 @@
+
+// A utility class consisting of static methods handling everything related to game logic
 class GameMath {
     //function that calculates percentage difference between two functions
     static calculatePercentageDifference(func1, func2) {
@@ -17,7 +19,11 @@ class GameMath {
         }, 0);
     
         // Calculates the average percentage difference
-        const avgPercentageDifference = sumPercentageDifference / xValues.length;
+        let avgPercentageDifference = sumPercentageDifference / xValues.length;
+
+        if (avgPercentageDifference<0 || avgPercentageDifference>100){
+            avgPercentageDifference = 100.0;
+        }
     
         // returns 2 decimal places after percentage
         return avgPercentageDifference.toFixed(2);

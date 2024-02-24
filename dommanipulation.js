@@ -1,5 +1,6 @@
 import Function from './function.js';
 
+// A utility class consisting solely of static methods handling everyting that involves DOM Manipulation
 class DOMManipulation{
     //adds clicked event for a button
     static addClickEvent(elementId, callback) {

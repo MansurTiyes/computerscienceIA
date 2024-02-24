@@ -1,3 +1,5 @@
+
+// For example player class only handles everything related to player. I.e keeping track of player's current score and guess.
 class Player{
     #current_score;
     #player_guess;

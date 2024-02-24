@@ -1,3 +1,5 @@
+
+// Function class handles everything related to random function generation (with the only exception of input validation, since it's already function related)
 class Function {
     #function_type
     #actual_function
@@ -92,6 +94,7 @@ class Function {
         return result;
     }
 
+    // The rest of the function class
     generateRandomFunction(difficulty){
         // function that generates random function depending on the input
         switch (difficulty){
